@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hodophile</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- header section starts -->
+    <header>
+        <a href="" class="logo animate__animated animate__heartBeat animate__infinite"> <span>H</span>odophile </a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#book">Book</a>
+            <a href="#contact" class="push">Contact</a>
+        </nav>
+    </header>
+    <!-- header section ends -->
+
+    <!-- home section starts -->
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3> <span>o</span>ne who loves to <span>t</span>ravel</h3>
+            <p> <span>"</span>The journey of a thousand miles begins with a single step<span>"</span> </p>
+        </div>
+
+        <!-- background video starts -->
+        <div class="vid">
+            <video playsinline autoplay muted loop id="bgvid">
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- background video ends -->
+
+    </section>
+    <!-- home section ends -->
+
+    <!-- book section starts -->
+    <section class="book" id="book">
+
+        <h1 class="heading">
+            <span>b</span>
+            <span>o</span>
+            <span>o</span>
+            <span>k</span>
+            &nbsp;&nbsp;&nbsp;
+            <span>n</span>
+            <span>o</span>
+            <span>w</span>
+        </h1>
+
+        <div class="inputs">
+            <form action="">
+                <div class="inputBox">
+                    <h3>name</h3>
+                    <input id="txtName" type="text" placeholder="your name.." autocomplete="off" required>
+                </div>
+                <div class="inputBox">
+                    <h3>mobile</h3>
+                    <input id="phoneNumber" type="tel" minlength="10" maxlength="10" autocomplete="off"
+                        placeholder="your number.." required>
+                </div>
+                <div class="inputBox">
+                    <h3>dob</h3>
+                    <input id="dateDOB" type="date" placeholder="your date-of-birth..">
+                </div>
+                <div class="inputBox">
+                    <h3>from</h3>
+                    <input id="txtFrom" type="text" placeholder="place name.." autocomplete="off" required>
+                </div>
+                <div class="inputBox">
+                    <h3>to</h3>
+                    <input id="txtTo" type="text" placeholder="place name.." autocomplete="off" required>
+                </div>
+                <div class="inputBox">
+                    <h3>no. of persons</h3>
+                    <input id="numberOfPersons" type="text" minlength="1" autocomplete="off" placeholder="numner of persons.."
+                        autocomplete="off" required>
+                </div>
+                <div class="inputBox">
+                    <h3>check in</h3>
+                    <input id="dateCheckIn" type="date" placeholder="check-in date..">
+                </div>
+                <div class="inputBox">
+                    <h3>check out</h3>
+                    <input id="dateCheckOut" type="date" placeholder="check-out date..">
+                </div> <br> <br>
+                <button type="button" id="bookBtn" class="btnSubmit" onclick="return bookButtonClick()">Book Now</button>
+                <!-- <input type="submit" id="bookBtn" class="btnSubmit" onclick="return bookButtonClick()" value="Book Now"> -->
+            </form>
+        </div>
+        <div>
+            <div class="modal-container" id="modal-container">
+                <div class="modal">
+                    <h1>booking details</h1>
+                    <p>Name: <label for="" class="details" id="lblName"></label></p>
+                    <p>Mobile: <label for="" class="details" id="lblMobile"></label></p>
+                    <p>Age: <label for="" class="details" id="lblAge"></label></p>
+                    <p>From: <label for="" class="details" id="lblFrom"></label></p>
+                    <p>To: <label for="" class="details" id="lblTo"></label></p>
+                    <p>No. of Persons: <label for="" class="details" id="lblNoOfPersons"></label></p>
+                    <p>Days to Stay: <label for="" class="details" id="lblDays"></label></p>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- book section ends -->
+
+    <!-- contact section starts -->
+    <section class="contact" id="contact">
+
+        <h1 class="heading">
+            <span>c</span>
+            <span>o</span>
+            <span>n</span>
+            <span>t</span>
+            <span>a</span>
+            <span>c</span>
+            <span>t</span>
+        </h1>
+        <div class="inputs">
+            <form action="" method="POST">
+                <div class="inputBox">
+                    <input type="text" id="contactName" placeholder="name" autocomplete="off" required>
+                    <input type="email" id="contactEMail" placeholder="email" autocomplete="off" required>
+                </div>
+                <div class="inputBox">
+                    <input type="text" id="contactNumber" minlength="10" maxlength="10" autocomplete="off" placeholder="number"
+                        autocomplete="off" required>
+                    <input type="text" id="contactSubject" placeholder="subject" autocomplete="off" required>
+                </div>
+                <textarea placeholder="mesage (optional)..." name="" id="" cols="30" rows="10"
+                    autocomplete="off"></textarea>
+                <br> <br>
+                <button type="button" id="btnSendMsg" onclick="return onSendMessagebtnClick()" class="btnSubmit">Send Message</button>
+                <!-- <input type="submit" id="btnSendMsg" onclick="return onSendMessagebtnClick()" class="btnSubmit"
+                    value="Send Message"> -->
+
+                <div class="custom-model-main">
+                    <div class="custom-model-inner">
+                        <div class="close-btn">×</div>
+                        <div class="custom-model-wrap">
+                            <div class="pop-up-content-wrap">
+                                <h1>Thank You!</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-overlay"></div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+    <!-- contact section ends -->
+
+    <!-- footer section starts -->
+    <section>
+        <footer>
+            <div class="footer-distributed">
+                <div class="footer-left">
+                    <p class="rights-text">© 2021 Created By Avinash Vijayan </p>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/avinash.vijayan.992"><i class="fab fa-facebook"
+                                title="Avinash Vijayan"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/"><i style="color: #fff;"
+                                class="fab fa-instagram" title="av_nash_v"></i></a>
+                        <a href="https://twitter.com/?lang=en-in"><i class="fab fa-twitter" title="twitter"></i></a>
+                        <a href="https://www.youtube.com/"><i style="color: #fff;" class="fab fa-youtube"
+                                title="youtube"></i></a>
+                        <a href="https://www.linkedin.com/feed/?trk=homepage-basic_google-one-tap-submit"><i
+                                style="color: #fff;" class="fab fa-linkedin-in" title="linkedIn"></i></a>
+                        <a href="https://github.com/"><i class="fab fa-github" title="github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-center">
+                    <div>
+                        <i class="fa fa-map-marker"></i>
+                        <p>Krishnanjali <br> Kerala, India</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <p>+91-8129620272</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <p><a href="mailto:support@company.com" id="footer-email">avv992@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-right">
+                    <p class="footer-company-about">
+                        <span>About the company</span>
+                        Travel is the movement of people between distant geographical locations. Travel can be done by
+                        foot, bicycle, automobile, train, boat, bus, airplane, ship or other means, with or without
+                        luggage, and can be one way or round trip.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!-- footer section starts -->
+
+    <!-- js file link -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
